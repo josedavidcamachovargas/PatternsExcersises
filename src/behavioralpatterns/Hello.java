@@ -10,9 +10,10 @@ package behavioralpatterns;
  * @author Andres Gonzalez
  */
 public class Hello {
-    public final int HOLA = 0;
+    public  int hola = 2;
 
     public Hello() {
+        
     }
     
     
