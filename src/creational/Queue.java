@@ -48,6 +48,17 @@ public class Queue {
         return newNum;
     }
     //peek method
+    public int peek()throws QueueException{
+        if(front == null){
+            throw new QueueException("La cola esta vacía");
+        }
+        return front.getNum();
+    }
     //isEmpty method
+    public boolean isEmpty(){
+        boolean empty;
+        empty = front == null;
+        return empty;
+    }
 
 }
