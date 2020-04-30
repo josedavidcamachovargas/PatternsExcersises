@@ -9,7 +9,7 @@ package creational;
  *
  * @author Andres Gonzalez
  */
-public class Queue {
+public class Queue<V> {
 
     private Node front;
     private Node rear;
@@ -20,9 +20,9 @@ public class Queue {
     }
 
     //Enqueue method
-    public int enqueue(int num) throws QueueException {
+    public V enqueue(V value) throws QueueException {
         Node n = new Node();
-        n.setNum(num);
+        n.setValue(value);
         if (maxItems > 0 && totalItems == maxItems) {
             throw new QueueException("La cola esta llena");
         } else if (front == null) {
@@ -30,16 +30,15 @@ public class Queue {
         } else {
             totalItems++;
         }
-        return rear.getNum();
+        return (V) rear.getValue();
     }
 
     //Dequeue method
-    public int dequeue(int num) throws QueueException {
+    public V dequeue(V value) throws QueueException {
         if (front == null) {
             throw new QueueException("La cola esta vacía");
         }
-        int newNum;
-        newNum = front.getNum();
+        V newNum = (V) front.getValue();
         front = front.getNext();
         if (front == null) {
             rear = null;
@@ -49,11 +48,11 @@ public class Queue {
     }
     
     //peek method
-    public int peek()throws QueueException{
+    public V peek() throws QueueException{
         if(front == null){
             throw new QueueException("La cola esta vacía");
         }
-        return front.getNum();
+        return (V) front.getValue();
     }
     
     //isEmpty method

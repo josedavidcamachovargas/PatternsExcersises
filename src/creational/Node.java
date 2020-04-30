@@ -10,25 +10,25 @@ package creational;
  * @author Andres Gonzalez
  */
 public class Node<V> {
-    private int num;
-    private V next;
+    private V value;
+    private Node next;
 
     public Node() {
     }
 
-    public int getNum() {
-        return num;
+    public V getValue() {
+        return value;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setValue(V value) {
+        this.value = value;
     }
 
-    public V getNext() {
+    public Node getNext() {
         return next;
     }
 
-    public void setNext(V next) {
+    public void setNext(Node next) {
         this.next = next;
     }
     
