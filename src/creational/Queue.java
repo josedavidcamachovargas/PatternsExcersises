@@ -14,11 +14,19 @@ public class Queue {
     private Node front;
     private Node rear;
     private int maxItems, totalItems;
+    private static Queue instance;
 
-    public Queue(int size) {
-        maxItems = size;
+//    public Queue(int size) {
+//        maxItems = size;
+//    }
+
+    public static Queue getInstance(){
+        if(instance == null ){
+            instance = new Queue();
+        }
+        return instance;
     }
-
+    
     //Enqueue method
     public int enqueue(int num) throws QueueException {
         Node n = new Node();
