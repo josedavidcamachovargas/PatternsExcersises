@@ -24,11 +24,11 @@ public class Node<V> {
         this.num = num;
     }
 
-    public V getNext() {
+    public Node getNext() {
         return next;
     }
 
-    public void setNext(V next) {
+    public void setNext(Node next) {
         this.next = next;
     }
     
