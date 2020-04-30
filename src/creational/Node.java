@@ -9,7 +9,6 @@ package creational;
  *
  * @author Andres Gonzalez
  */
-public class Cola {
- 
+public class Node {
+    
 }
-

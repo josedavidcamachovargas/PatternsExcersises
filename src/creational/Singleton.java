@@ -9,6 +9,6 @@ package creational;
  *
  * @author Andres Gonzalez
  */
-public class Singleton {
+public class Singleton{
     
 }
