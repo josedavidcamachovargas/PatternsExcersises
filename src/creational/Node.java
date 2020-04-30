@@ -11,7 +11,7 @@ package creational;
  */
 public class Node<V> {
     private int num;
-    private V next;
+    private Node next;
 
     public Node() {
     }

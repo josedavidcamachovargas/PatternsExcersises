@@ -40,7 +40,7 @@ public class Queue {
         }
         int newNum;
         newNum = front.getNum();
-        front = (Node) front.getNext();
+        front = front.getNext();
         if (front == null) {
             rear = null;
         }
