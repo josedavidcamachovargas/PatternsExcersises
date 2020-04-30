@@ -47,6 +47,7 @@ public class Queue {
         totalItems++;
         return newNum;
     }
+    
     //peek method
     public int peek()throws QueueException{
         if(front == null){
@@ -54,6 +55,7 @@ public class Queue {
         }
         return front.getNum();
     }
+    
     //isEmpty method
     public boolean isEmpty(){
         boolean empty;

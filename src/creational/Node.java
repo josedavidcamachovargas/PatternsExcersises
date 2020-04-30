@@ -9,9 +9,9 @@ package creational;
  *
  * @author Andres Gonzalez
  */
-public class Node {
+public class Node<V> {
     private int num;
-    private Node next;
+    private V next;
 
     public Node() {
     }
@@ -24,11 +24,11 @@ public class Node {
         this.num = num;
     }
 
-    public Node getNext() {
+    public V getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(V next) {
         this.next = next;
     }
     
