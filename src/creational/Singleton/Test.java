@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package creational;
+package creational.Singleton;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -11,7 +13,6 @@ package creational;
  */
 public class Test {
     public static void main(String [] args) throws QueueException{
-        
         Queue queue = Queue.getInstance();
         queue.enqueue(1);
         queue.enqueue(2);
