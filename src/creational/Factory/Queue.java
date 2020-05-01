@@ -12,25 +12,26 @@ import creational.Singleton.QueueException;
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
  * Esta clase se encarga de crear una cola basica con sus respectivos metodos
- * de encoolar, desencolar, el metodo peek y tambien isEmpty()
+ * de encolar, desencolar, el metodo peek y tambien isEmpty()
  */
-public class Queue<V>{
+public class Queue<V> implements IFactory{
     
-    private creational.Singleton.Node front;
-    private creational.Singleton.Node rear;
+    private Node front;
+    private Node rear;
     private int maxItems, totalItems;
-    private static creational.Singleton.Queue instance;
+    private static Queue instance;
 
-    public static creational.Singleton.Queue getInstance(){
+    public static Queue getInstance(){
         if(instance == null ){
-            instance = new creational.Singleton.Queue();
+            instance = new Queue();
         }
         return instance;
     }
     
-    //Enqueue method
-    public V enqueue(V value) throws QueueException {
-        creational.Singleton.Node n = new creational.Singleton.Node();
+    //Enqueue method 
+    @Override
+    public V add(V value) throws QueueException {
+        Node n = new Node();
         n.setValue(value);
         if (maxItems > 0 && totalItems == maxItems) {
             throw new QueueException("La cola esta llena");
@@ -43,7 +44,7 @@ public class Queue<V>{
     }
 
     //Dequeue method
-    public V dequeue(V value) throws QueueException {
+    public V delete(V value) throws QueueException {
         if (front == null) {
             throw new QueueException("La cola está vacía");
         }
