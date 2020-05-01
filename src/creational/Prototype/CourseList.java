@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * en esta clase.
  */
 
-public class CourseList implements PrototypeInterface{
+public class CourseList implements Cloneable{
 
    private Course[] courseList;
 
@@ -46,12 +46,13 @@ public class CourseList implements PrototypeInterface{
     }
 
    @Override
-   public Object clone(){
+   public Object clone() {
+       Object o = null;
        try {
-           return super.clone();
+           o = super.clone();
        } catch (CloneNotSupportedException ex) {
            Logger.getLogger(CourseList.class.getName()).log(Level.SEVERE, null, ex);
        }
-       return null;
+       return o;
     }
 }
