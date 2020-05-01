@@ -38,7 +38,11 @@ public class CourseList implements PrototypeInterface{
 
     @Override
     public String toString() {
-        return "CourseList: " + "courseList: " + courseList;
+        String aux = "";
+        for(int i = 0; i < courseList.length; i++){
+            aux += courseList[i].toString() + "\n";
+        }
+        return "Lista de cursos: " + aux;
     }
 
    @Override

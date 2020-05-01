@@ -29,13 +29,16 @@ public class Test {
         clist[0] = c1;
         clist[1] = c2;
         
+        System.out.println("Profesor #1: " + t1);
+        System.out.println("Profesor #2: " + t2 + "\n");
+        
+        System.out.println("Estudiante #1: " + s1);
+        System.out.println("Estudiante #2: " + s2 + "\n");
+        
         CourseList cl = new CourseList();
         cl.setCourseList(clist);
-        
-        System.out.println("Profesor #1: " + t1);
-        System.out.println("Profesor #2: " + t2);
-        
-        System.out.println("Lista de cursos con datos agregados: " + cl.getCourseList().toString());
-        
+        System.out.println("Lista de cursos con datos agregados: \n" + cl.toString() + "\n");
+        CourseList cclonada =  (CourseList) cl.clone();
+        System.out.println("Lista de cursos clonada: " + cclonada);
     }
 }
