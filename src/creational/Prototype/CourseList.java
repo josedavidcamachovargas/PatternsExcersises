@@ -10,8 +10,13 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta clase se encarga de crearuna lista de cursos, también implementa de la 
+ * clase PrototypeInterface la cual tiene el metodo clone() que se va a modificar 
+ * en esta clase.
  */
+
 public class CourseList implements PrototypeInterface{
 
    private Course[] courseList;

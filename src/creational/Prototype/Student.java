@@ -25,6 +25,10 @@ public class Student {
         this.schoolarship = schoolarship;
     }
 
+    public Student() {
+    }
+    
+
     public String getFullName() {
         return fullName;
     }

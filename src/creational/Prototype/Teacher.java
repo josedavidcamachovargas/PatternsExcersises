@@ -23,6 +23,10 @@ public class Teacher {
         this.academicDegree = academicDegree;
     }
 
+    public Teacher() {
+    }
+    
+
     public String getFullName() {
         return fullName;
     }
@@ -49,6 +53,6 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "Teacher: " + ", fullName: " + fullName + ", id: " + id + ", academicDegree: " + academicDegree;
+        return  "Nombre :"  + fullName + ", número de cédula: " + id + ", grado académico: " + academicDegree;
     }
 }
