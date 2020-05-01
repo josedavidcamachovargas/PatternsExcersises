@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package creational.Singleton;
+package creational.Factory;
 
 /**
  *
@@ -13,11 +13,10 @@ package creational.Singleton;
  * clase padre Exception y utilizando en el metodo constructor el super y 
  * recibiendo un mensaje el cual sera el error que esta maneje.
  */
-public class QueueException extends Exception {
+ public class QueueException extends Exception {
 
     public QueueException(String message) {
         super(message);
     }
-    
     
 }

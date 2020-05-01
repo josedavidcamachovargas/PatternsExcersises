@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package creational.Singleton;
+package creational.Factory;
 
 /**
- *
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
  * Esta clase se encarga de crear la base de un nodo generico
@@ -34,5 +33,4 @@ public class Node<V> {
     public void setNext(Node next) {
         this.next = next;
     }
-    
 }
