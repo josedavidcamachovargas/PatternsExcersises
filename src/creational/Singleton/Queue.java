@@ -7,7 +7,9 @@ package creational.Singleton;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio Gonzalez Orozco B83477
+ * @author José David Camacho Vargas B91484
+ * 
  */
 public class Queue<V> {
 

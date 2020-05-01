@@ -3,19 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package creational.Singleton;
+package creational.Builder;
 
 /**
- * 
+ *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
- * 
  */
-public class QueueException extends Exception {
-
-    public QueueException(String message) {
-        super(message);
-    }
-    
+public class Test {
     
 }
