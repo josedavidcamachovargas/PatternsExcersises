@@ -13,7 +13,7 @@ package creational.Prototype;
  * Esta clase se encarga de crear una interfaz que hereda de la clase clonable
  * la cual tiene el metodo clone() que va a ser utilizado en las siguientes clases.
  */
-public interface PrototypeInterface extends Cloneable{
+public interface PrototypeInterface{
     
-    PrototypeInterface clone();
+    public Object clone();
 }
