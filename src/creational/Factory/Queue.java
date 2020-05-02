@@ -47,5 +47,16 @@ public class Queue<V> implements IFactory<V>{
         totalItems++;
         return newNum;
     }
+    
+    @Override
+    public void show(){
+        Node aux = new Node();
+        System.out.println("Lista de elementos de la pila.");
+        for(int i = 0; i <maxItems; i++){
+            System.out.println(aux.getValue() + " - ");
+            aux = front.getNext();
+            
+        }
+    }
 
 }

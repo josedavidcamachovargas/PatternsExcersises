@@ -14,4 +14,5 @@ public interface IFactory<V> {
     
     public V add(V value)throws QueueException, StackException;
     public V delete()throws QueueException, StackException;
+    public void show();
 }

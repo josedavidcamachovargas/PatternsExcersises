@@ -62,21 +62,15 @@ public class Stack<V> implements IFactory<V>{
         }
         return value;
     }
-
-    public int search(int value) throws StackException {
-        int contador = 0;
-        if (top == null) {
-            throw new StackException("La lista esta vacia");
-        } else {
-            Node actual = top;
-            while (actual != null) {
-                if (actual.getValue().equals(value)) { 
-                    return contador;
-                }
-                    contador++;
-                    actual = actual.getNext();
-            }
+    
+    public void show(){
+        Node aux = new Node();
+        System.out.println("Lista de elementos de la pila.");
+        for(int i = 0; i <maxElementos; i++){
+            System.out.println(aux.getValue() + " - ");
+            aux = top.getNext();
+            
         }
-        return -1;
     }
+
 }
