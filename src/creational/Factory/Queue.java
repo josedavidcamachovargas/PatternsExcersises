@@ -67,8 +67,6 @@ public class Queue<V> implements IFactory<V>{
         return (V) rear.getValue();
     }
 
-    //Dequeue method
-
     @Override
     public V delete() throws QueueException{
         if (front == null) {
@@ -86,11 +84,11 @@ public class Queue<V> implements IFactory<V>{
     @Override
     public void show(){
         Node aux = new Node();
-        System.out.println("Lista de elementos de la pila.");
+        aux = front;
+        System.out.println("Lista de elementos de la cola");
         for(int i = 0; i <maxItems; i++){
             System.out.println(aux.getValue() + " - ");
-            aux = front.getNext();
-            
+            aux = aux.getNext(); 
         }
     }
 

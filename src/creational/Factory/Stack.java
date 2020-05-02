@@ -80,12 +80,14 @@ public class Stack<V> implements IFactory<V>{
         return value;
     }
     
+    @Override
     public void show(){
         Node aux = new Node();
+        aux = top;
         System.out.println("Lista de elementos de la pila.");
         for(int i = 0; i <maxElementos; i++){
             System.out.println(aux.getValue() + " - ");
-            aux = top.getNext();
+            aux = aux.getNext();
             
         }
     }

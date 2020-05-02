@@ -4,16 +4,24 @@
  * and open the template in the editor.
  */
 package creational.Factory;
-import creational.Factory.IFactory;
+
 /**
  *
  * @author Andres Gonzalez
  */
 public class Test {
-
-    public static void main(String args[]) {
-       Queue queue = new Queue();
-       Stack stack = new Stack();
-       
+    public static void main(String args[]) throws QueueException, StackException {
+        try {
+        
+        IFactory qFactory = new Queue();
+        qFactory.add(8);
+        qFactory.add(7);
+        qFactory.add(7);
+        qFactory.show();
+        
+        
+        } catch (QueueException | StackException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
