@@ -13,21 +13,22 @@ import java.util.Iterator;
  * @author Andres Gonzalez
  */
 public class Employee_Array {
-    private ArrayList<Employee> list;
+
+    private ArrayList<ClsEmployee> list;
 
     public Employee_Array() {
-        list = new ArrayList<Employee>();
+        list = new ArrayList<ClsEmployee>();
     }
 
-    public Employee_Array(ArrayList<Employee> list) {
+    public Employee_Array(ArrayList<ClsEmployee> list) {
         this.list = list;
     }
 
-    public ArrayList<Employee> getList() {
+    public ArrayList<ClsEmployee> getList() {
         return list;
     }
 
-    public void setList(ArrayList<Employee> list) {
+    public void setList(ArrayList<ClsEmployee> list) {
         this.list = list;
     }
 
@@ -35,15 +36,13 @@ public class Employee_Array {
     public String toString() {
         return "Lista de empleados: " + list.toString();
     }
-    
-    private Employee idValidation(int id) {
-        Iterator<Employee> i = list.iterator();
+
+    private void idValidation(int id) throws EmployeeException {
+        Iterator<ClsEmployee> i = list.iterator();
         while (i.hasNext()) {
-            if(i.next().getId() == id){
-                System.out.println("No puede haber 2 numeros de cedula iguales");
+            if (i.next().getId() == id) {
+                throw new EmployeeException("No puede haber 2 números de cedula iguales");
             }
         }
-        return null;
     }
-
 }
