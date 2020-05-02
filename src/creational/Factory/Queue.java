@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package creational.Factory;
-
-import creational.Singleton.QueueException;
-
 /**
  *
  * @author Andrés Antonio González Orozco B83477  
@@ -14,19 +11,11 @@ import creational.Singleton.QueueException;
  * Esta clase se encarga de crear una cola basica con sus respectivos metodos
  * de encolar, desencolar, el metodo peek y tambien isEmpty()
  */
-public class Queue<V> implements IFactory{
+public class Queue<V> implements IFactory<V>{
     
     private Node front;
     private Node rear;
     private int maxItems, totalItems;
-    private static Queue instance;
-
-    public static Queue getInstance(){
-        if(instance == null ){
-            instance = new Queue();
-        }
-        return instance;
-    }
     
     //Enqueue method 
     @Override
@@ -44,7 +33,9 @@ public class Queue<V> implements IFactory{
     }
 
     //Dequeue method
-    public V delete(V value) throws QueueException {
+
+    @Override
+    public V delete() throws QueueException{
         if (front == null) {
             throw new QueueException("La cola está vacía");
         }
@@ -56,19 +47,5 @@ public class Queue<V> implements IFactory{
         totalItems++;
         return newNum;
     }
-    
-    //peek method
-    public V peek() throws QueueException{
-        if(front == null){
-            throw new QueueException("La cola esta vacía");
-        }
-        return (V) front.getValue();
-    }
-    
-    //isEmpty method
-    public boolean isEmpty(){
-        boolean empty;
-        empty = front == null;
-        return empty;
-    }
+
 }

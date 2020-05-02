@@ -8,9 +8,10 @@ package creational.Factory;
 /**
  *
  * @author Andres Gonzalez
+ * @param 
  */
 public interface IFactory<V> {
     
-    public V add(V value);
-    public V delete() throws StackException, QueueException;
+    public V add(V value)throws QueueException, StackException;
+    public V delete()throws QueueException, StackException;
 }

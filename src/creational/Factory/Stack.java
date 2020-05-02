@@ -13,7 +13,7 @@ package creational.Factory;
  * Esta clase se encarga de crear una pila basica con sus respectivos metodos
  * apilar, desapilar
  */
-public class Stack<V> implements IFactory{
+public class Stack<V> implements IFactory<V>{
     private Node top;
     private int maxElementos;
     private int numElementos;
@@ -29,7 +29,6 @@ public class Stack<V> implements IFactory{
     }
 
     //Desapilar pop
- 
     @Override
     public V delete() throws StackException {
         V value;
