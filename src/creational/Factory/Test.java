@@ -16,9 +16,14 @@ public class Test {
         IFactory qFactory = new Queue();
         qFactory.add(8);
         qFactory.add(7);
-        qFactory.add(7);
+        qFactory.add(6);
         qFactory.show();
         
+        IFactory qFactory1 = new Stack();
+        qFactory1.add(6);
+        qFactory1.add(7);
+        qFactory1.add(8);
+        qFactory1.show();
         
         } catch (QueueException | StackException e) {
             System.err.println(e.getMessage());
