@@ -18,14 +18,31 @@ public class Stack<V> implements IFactory<V>{
     private int maxElementos;
     private int numElementos;
     
-    //Si tamaño > 0 -> pila es finita 
-    //Si tamaño <= 0 -> pila es infinita
-    public Stack(int tamaño) {
-        maxElementos = tamaño;
+    public Stack() {
     }
-    
-    public int size() {
+
+    public Node getTop() {
+        return top;
+    }
+
+    public void setTop(Node top) {
+        this.top = top;
+    }
+
+    public int getMaxElementos() {
+        return maxElementos;
+    }
+
+    public void setMaxElementos(int maxElementos) {
+        this.maxElementos = maxElementos;
+    }
+
+    public int getNumElementos() {
         return numElementos;
+    }
+
+    public void setNumElementos(int numElementos) {
+        this.numElementos = numElementos;
     }
 
     //Desapilar pop
