@@ -5,6 +5,7 @@
  */
 package creational.Factory;
 
+
 /**
  *
  * @author Andrés Antonio González Orozco B83477  
@@ -12,7 +13,7 @@ package creational.Factory;
  * Esta clase se encarga de crear una pila basica con sus respectivos metodos
  * apilar, desapilar
  */
-public class Stack {
+public class Stack<V> implements IFactory<V>{
     private Node top;
     private int maxElementos;
     private int numElementos;
@@ -26,33 +27,23 @@ public class Stack {
     public int size() {
         return numElementos;
     }
-    
-    public boolean empty() {
-        return top == null;
-    }
 
-    //Cima
-    public int top() throws StackException{
-        if(top == null){
-            throw new StackException("La pila esta vacia");
-        }
-        return (int) top.getValue();
-    }
-
-    //Desapilar
-    public int pop() throws StackException {
-        int value;
+    //Desapilar pop
+    @Override
+    public V delete() throws StackException {
+        V value;
         if (top == null) {
             throw new StackException("La pila esta vacia");
         } else {
-            value = (int) top.getValue();
+            value = (V) top.getValue();
             top = top.getNext();
         }
         return value;
     }
 
-    //Apilar
-    public int push(int value) throws StackException{
+    //Apilar push
+    @Override
+    public V add(V value) throws StackException{
         if(maxElementos > 0 && numElementos == maxElementos){
             throw new StackException("La pila esta llena");
             
@@ -71,21 +62,15 @@ public class Stack {
         }
         return value;
     }
-
-    public int search(int value) throws StackException {
-        int contador = 0;
-        if (top == null) {
-            throw new StackException("La lista esta vacia");
-        } else {
-            Node actual = top;
-            while (actual != null) {
-                if (actual.getValue().equals(value)) { 
-                    return contador;
-                }
-                    contador++;
-                    actual = actual.getNext();
-            }
+    
+    public void show(){
+        Node aux = new Node();
+        System.out.println("Lista de elementos de la pila.");
+        for(int i = 0; i <maxElementos; i++){
+            System.out.println(aux.getValue() + " - ");
+            aux = top.getNext();
+            
         }
-        return -1;
     }
+
 }

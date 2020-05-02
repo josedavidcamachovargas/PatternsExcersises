@@ -4,33 +4,23 @@
  * and open the template in the editor.
  */
 package creational.Factory;
-
-import creational.Singleton.QueueException;
-
 /**
  *
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
  * Esta clase se encarga de crear una cola basica con sus respectivos metodos
- * de encoolar, desencolar, el metodo peek y tambien isEmpty()
+ * de encolar, desencolar, el metodo peek y tambien isEmpty()
  */
-public class Queue<V>{
+public class Queue<V> implements IFactory<V>{
     
-    private creational.Singleton.Node front;
-    private creational.Singleton.Node rear;
+    private Node front;
+    private Node rear;
     private int maxItems, totalItems;
-    private static creational.Singleton.Queue instance;
-
-    public static creational.Singleton.Queue getInstance(){
-        if(instance == null ){
-            instance = new creational.Singleton.Queue();
-        }
-        return instance;
-    }
     
-    //Enqueue method
-    public V enqueue(V value) throws QueueException {
-        creational.Singleton.Node n = new creational.Singleton.Node();
+    //Enqueue method 
+    @Override
+    public V add(V value) throws QueueException {
+        Node n = new Node();
         n.setValue(value);
         if (maxItems > 0 && totalItems == maxItems) {
             throw new QueueException("La cola esta llena");
@@ -43,7 +33,9 @@ public class Queue<V>{
     }
 
     //Dequeue method
-    public V dequeue(V value) throws QueueException {
+
+    @Override
+    public V delete() throws QueueException{
         if (front == null) {
             throw new QueueException("La cola está vacía");
         }
@@ -56,18 +48,15 @@ public class Queue<V>{
         return newNum;
     }
     
-    //peek method
-    public V peek() throws QueueException{
-        if(front == null){
-            throw new QueueException("La cola esta vacía");
+    @Override
+    public void show(){
+        Node aux = new Node();
+        System.out.println("Lista de elementos de la pila.");
+        for(int i = 0; i <maxItems; i++){
+            System.out.println(aux.getValue() + " - ");
+            aux = front.getNext();
+            
         }
-        return (V) front.getValue();
     }
-    
-    //isEmpty method
-    public boolean isEmpty(){
-        boolean empty;
-        empty = front == null;
-        return empty;
-    }
+
 }
