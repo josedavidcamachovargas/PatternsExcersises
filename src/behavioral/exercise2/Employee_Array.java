@@ -37,11 +37,12 @@ public class Employee_Array {
         return "Lista de empleados: " + list.toString();
     }
     
-    public void add(ClsEmployee employee) throws EmployeeException{
-        idValidation(employee.getId());
-        if(list.isEmpty()){
+    public void add(ClsEmployee employee) throws EmployeeException {
+        if (list.isEmpty()) {
             list.add(employee);
-        } 
+        } else if (idValidation(employee.getId()) == true) {
+            list.add(employee);
+        }
     }
     
     public void ascendingId(ArrayList<ClsEmployee> tempList){
@@ -57,12 +58,13 @@ public class Employee_Array {
         }
     }
 
-    private void idValidation(int id) throws EmployeeException {
+    private boolean idValidation(int id) throws EmployeeException {
         Iterator<ClsEmployee> i = list.iterator();
         while (i.hasNext()) {
             if (i.next().getId() == id) {
                 throw new EmployeeException("No puede haber 2 números de cedula iguales");
             }
         }
+        return true;
     }
 }
