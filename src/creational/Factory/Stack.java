@@ -13,10 +13,10 @@ package creational.Factory;
  * Esta clase se encarga de crear una pila basica con sus respectivos metodos
  * apilar, desapilar
  */
-public class Stack<V> implements IFactory<V>{
+public class Stack<V> extends NewCollection<V>{
     private Node top;
-    private int maxElementos;
-    private int numElementos;
+    private int maxItems;
+    private int totalItems;
     
     public Stack() {
     }
@@ -29,20 +29,20 @@ public class Stack<V> implements IFactory<V>{
         this.top = top;
     }
 
-    public int getMaxElementos() {
-        return maxElementos;
+    public int getMaxItems() {
+        return maxItems;
     }
 
-    public void setMaxElementos(int maxElementos) {
-        this.maxElementos = maxElementos;
+    public void setItems(int maxItems) {
+        this.maxItems = maxItems;
     }
 
-    public int getNumElementos() {
-        return numElementos;
+    public int getTotalItems() {
+        return totalItems;
     }
 
-    public void setNumElementos(int numElementos) {
-        this.numElementos = numElementos;
+    public void setTotalItems(int totalItems) {
+        this.totalItems = totalItems;
     }
 
     //Desapilar pop
@@ -58,38 +58,44 @@ public class Stack<V> implements IFactory<V>{
         return value;
     }
 
+    @Override
+    public V delete(V element) throws QueueException, StackException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     //Apilar push
     @Override
     public V add(V value) throws StackException{
-        if(maxElementos > 0 && numElementos == maxElementos){
+        if(maxItems > 0 && totalItems == maxItems){
             throw new StackException("La pila esta llena");
             
         }else {
-            Node nuevo = new Node();
-            nuevo.setValue(value);
+            Node newNode = new Node();
+            newNode.setValue(value);
             
             if(top == null){
-                top = nuevo;
+                top = newNode;
                 
             }else{
-                nuevo.setNext(top);
-                top = nuevo;
+                newNode.setNext(top);
+                top = newNode;
             }
-            numElementos++;
+            totalItems++;
         }
         return value;
     }
     
     @Override
-    public void show(){
-        Node aux = new Node();
-        aux = top;
-        System.out.println("Lista de elementos de la pila.");
-        for(int i = 0; i <maxElementos; i++){
-            System.out.println(aux.getValue() + " - ");
-            aux = aux.getNext();
-            
+    public String showCollection(){
+        Node aux = top;
+        String txt = "Lista de elementos de la cola:\n";
+        for(int i = 0; i < getTotalItems(); i++){
+            txt += aux.getValue() + "\n";
+            aux = aux.getNext(); 
         }
+        return txt;
     }
+
+
 
 }

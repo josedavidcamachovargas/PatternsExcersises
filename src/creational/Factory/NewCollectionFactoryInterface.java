@@ -7,12 +7,11 @@ package creational.Factory;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
  * @param 
  */
-public interface IFactory<V> {
+public interface NewCollectionFactoryInterface {
     
-    public V add(V value)throws QueueException, StackException;
-    public V delete()throws QueueException, StackException;
-    public void show();
+    NewCollection createCollection();
 }

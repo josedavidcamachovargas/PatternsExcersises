@@ -5,28 +5,34 @@
  */
 package creational.Factory;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Andres Gonzalez
  */
 public class Test {
-    public static void main(String args[]) throws QueueException, StackException {
+    public static void main(String args[]) {
+        NewCollectionFactoryInterface factory = new QueueFactory();
+        NewCollection queue = factory.createCollection();
         try {
-        
-        IFactory qFactory = new Queue();
-        qFactory.add(8);
-        qFactory.add(7);
-        qFactory.add(6);
-        qFactory.show();
-        
-        IFactory qFactory1 = new Stack();
-        qFactory1.add(6);
-        qFactory1.add(7);
-        qFactory1.add(8);
-        qFactory1.show();
-        
-        } catch (QueueException | StackException e) {
-            System.err.println(e.getMessage());
+            queue.add(1);
+            queue.add(2);
+            queue.add(3);
+            queue.add(4);
+            queue.add(5);
+            System.out.println(queue.showCollection());
+            queue.delete();
+            System.out.println(queue.showCollection());
+            queue.delete(4);
+            System.out.println(queue.showCollection());
+            queue.delete(3);
+            System.out.println(queue.showCollection());
+        } catch (QueueException ex) {
+            System.out.println(ex.getMessage());
+        } catch (StackException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }
