@@ -14,10 +14,10 @@ package creational.Prototype;
  */
 public class Teacher {
     private String fullName;
-    private int id;
+    private String id;
     private String academicDegree;
 
-    public Teacher(String fullName, int id, String academicDegree) {
+    public Teacher(String fullName, String id, String academicDegree) {
         this.fullName = fullName;
         this.id = id;
         this.academicDegree = academicDegree;
@@ -35,11 +35,11 @@ public class Teacher {
         this.fullName = fullName;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

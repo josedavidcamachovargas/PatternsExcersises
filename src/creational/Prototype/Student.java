@@ -14,11 +14,11 @@ package creational.Prototype;
  */
 public class Student {
     private String fullName;
-    private int id;
+    private String id;
     private String studentId;
     private int schoolarship;
 
-    public Student(String fullName, int id, String studentId, int schoolarship) {
+    public Student(String fullName, String id, String studentId, int schoolarship) {
         this.fullName = fullName;
         this.id = id;
         this.studentId = studentId;
@@ -37,11 +37,11 @@ public class Student {
         this.fullName = fullName;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

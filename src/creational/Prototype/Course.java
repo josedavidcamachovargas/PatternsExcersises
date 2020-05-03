@@ -5,21 +5,23 @@
  */
 package creational.Prototype;
 
+import java.util.ArrayList;
+
 /**
  *
-  * @author Andrés Antonio González Orozco B83477  
+ * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
- * Esta clase se encarga de crear uncurssoe con sus respectivos
+ * Esta clase se encarga de crear un curso con sus respectivos
  * metodos set y get, constructor y toString
  */
-public class Course {
+public class Course implements Cloneable {
     private String name;
     private String acronym;
     private int credits;
     private Teacher teacher;
-    private Student[] students;
+    private ArrayList<Student> students;
 
-    public Course(String name, String acronym, int credits, Teacher teacher, Student[] students) {
+    public Course(String name, String acronym, int credits, Teacher teacher, ArrayList<Student> students) {
         this.name = name;
         this.acronym = acronym;
         this.credits = credits;
@@ -28,6 +30,7 @@ public class Course {
     }
 
     public Course() {
+        students = new ArrayList<>();
     }
 
     public String getName() {
@@ -62,17 +65,22 @@ public class Course {
         this.teacher = teacher;
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 
     @Override
     public String toString() {
         return "Nombre: " + name + "\nSiglas: " + acronym + "\nCredits: " +
-                credits + "\nTeacher: " + teacher + "\nStudents: " + students;
+                credits + "\nTeacher: " + teacher + "\nStudents: " + students + ".";
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

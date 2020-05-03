@@ -5,6 +5,7 @@
  */
 package creational.Prototype;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,47 +13,49 @@ import java.util.logging.Logger;
  *
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
- * Esta clase se encarga de crearuna lista de cursos, también implementa de la 
- * clase PrototypeInterface la cual tiene el metodo clone() que se va a modificar 
- * en esta clase.
+ * 
+ * Esta clase se encarga de crear una lista de cursos, usando un ArrayList con
+ * objetos de la clase Course.
+ * 
+ * Esta clase facilita la creación de objetos
+ * que pueden crear duplicados de sí mismos.
  */
 
-public class CourseList implements Cloneable{
+public class CourseList implements Cloneable {
 
-   private Course[] courseList;
+    private ArrayList<Course> courseList;
 
     public CourseList() {
+        courseList = new ArrayList<>();
     }
 
-    public CourseList(Course[] courseList) {
+    public CourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
     }
 
-    public Course[] getCourseList() {
+    public ArrayList<Course> getCourseList() {
         return courseList;
     }
 
-    public void setCourseList(Course[] courseList) {
+    public void setCourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
     }
 
     @Override
     public String toString() {
         String aux = "";
-        for(int i = 0; i < courseList.length; i++){
-            aux += courseList[i].toString() + "\n";
+        for (int i = 0; i < courseList.size(); i++) {
+            aux += courseList.get(i).toString() + "\n";
         }
-        return "Lista de cursos: " + aux;
+        return "Lista de cursos:\n" + aux;
     }
 
-   @Override
-   public Object clone() {
-       Object o = null;
-       try {
-           o = super.clone();
-       } catch (CloneNotSupportedException ex) {
-           Logger.getLogger(CourseList.class.getName()).log(Level.SEVERE, null, ex);
-       }
-       return o;
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        CourseList clone = new CourseList();
+        for (Course course : courseList) {
+            clone.getCourseList().add((Course)course.clone());
+        }
+        return clone;
     }
 }

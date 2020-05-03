@@ -12,6 +12,9 @@ import java.util.ArrayList;
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
  * 
+ * Esta clase realiza la prueba del método getInstance() dentro de la clase que
+ * usa el patrón Singleton
+ * 
  */
 public class Test {
     public static void main(String [] args) throws QueueException{
