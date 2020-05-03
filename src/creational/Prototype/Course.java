@@ -75,12 +75,16 @@ public class Course implements Cloneable {
 
     @Override
     public String toString() {
-        return "Nombre: " + name + "\nSiglas: " + acronym + "\nCredits: " +
+        return "\nNombre: " + name + "\nSiglas: " + acronym + "\nCredits: " +
                 credits + "\nTeacher: " + teacher + "\nStudents: " + students + ".";
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        ArrayList<Student> cloneStudents = new ArrayList<>();
+        for (Student student : students) {
+            cloneStudents.add((Student)student.clone());
+        }
+        return new Course(name, acronym, credits, (Teacher)teacher.clone(), cloneStudents);
     }
 }

@@ -12,7 +12,7 @@ package creational.Prototype;
  * Esta clase se encarga de crear un profesor con sus respectivos
  * metodos set y get, constructor y toString
  */
-public class Teacher {
+public class Teacher implements Cloneable {
     private String fullName;
     private String id;
     private String academicDegree;
@@ -54,5 +54,10 @@ public class Teacher {
     @Override
     public String toString() {
         return  "Nombre :"  + fullName + ", número de cédula: " + id + ", grado académico: " + academicDegree;
+    }
+    
+    @Override 
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

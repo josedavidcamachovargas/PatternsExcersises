@@ -12,7 +12,7 @@ package creational.Prototype;
  * Esta clase se encarga de crear un estudiante con sus respectivos
  * metodos set y get, constructor y toString
  */
-public class Student {
+public class Student implements Cloneable {
     private String fullName;
     private String id;
     private String studentId;
@@ -64,5 +64,10 @@ public class Student {
     @Override
     public String toString() {
         return "Nombre: " + fullName + ", cédula: " + id + ", carné: " + studentId + ", beca: " + schoolarship;
+    }
+    
+    @Override 
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
