@@ -15,37 +15,17 @@ package creational.Factory;
  */
 public class Stack<V> extends NewCollection<V>{
     private Node top;
-    private int maxItems;
-    private int totalItems;
     
     public Stack() {
+        super();
+    }
+    
+    public Stack(int size) {
+        super(size);
     }
 
-    public Node getTop() {
-        return top;
-    }
 
-    public void setTop(Node top) {
-        this.top = top;
-    }
-
-    public int getMaxItems() {
-        return maxItems;
-    }
-
-    public void setItems(int maxItems) {
-        this.maxItems = maxItems;
-    }
-
-    public int getTotalItems() {
-        return totalItems;
-    }
-
-    public void setTotalItems(int totalItems) {
-        this.totalItems = totalItems;
-    }
-
-    //Desapilar pop
+    // pop method
     @Override
     public V delete() throws StackException {
         V value;
@@ -54,19 +34,43 @@ public class Stack<V> extends NewCollection<V>{
         } else {
             value = (V) top.getValue();
             top = top.getNext();
+            setTotalItems(getTotalItems() - 1);
         }
         return value;
     }
 
     @Override
-    public V delete(V element) throws QueueException, StackException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public V delete(V value) throws QueueException, StackException {
+        V temp = null;
+        if (top == null) {
+            throw new StackException("La pila esta vacia");
+        } else {
+            if (top.getValue().equals(value)) {
+                delete();
+            } else {
+                for (Node current = top; current.getNext() != null; current = current.getNext()) {
+                    if (current.getNext().getValue().equals(value)) {
+                        temp = (V) current.getNext().getValue();
+                        if (current.getNext().getNext() == null) {
+                            current.setNext(null);
+                        } else {
+                            Node change = current.getNext().getNext();
+                            current.getNext().setNext(null);
+                            current.setNext(change);
+                        }
+                        setTotalItems(getTotalItems() - 1);
+                        break;
+                    }
+                }
+            }
+        }
+        return temp;
     }
 
-    //Apilar push
+    // push method
     @Override
     public V add(V value) throws StackException{
-        if(maxItems > 0 && totalItems == maxItems){
+        if(getMaxItems() > 0 && getTotalItems() == getMaxItems()){
             throw new StackException("La pila esta llena");
             
         }else {
@@ -80,7 +84,7 @@ public class Stack<V> extends NewCollection<V>{
                 newNode.setNext(top);
                 top = newNode;
             }
-            totalItems++;
+            setTotalItems(getTotalItems() + 1);
         }
         return value;
     }
@@ -88,7 +92,7 @@ public class Stack<V> extends NewCollection<V>{
     @Override
     public String showCollection(){
         Node aux = top;
-        String txt = "Lista de elementos de la cola:\n";
+        String txt = "Lista de elementos de la pila:\n";
         for(int i = 0; i < getTotalItems(); i++){
             txt += aux.getValue() + "\n";
             aux = aux.getNext(); 

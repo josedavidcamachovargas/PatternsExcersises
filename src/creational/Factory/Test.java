@@ -9,8 +9,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * 
+ * Clase para realizar la prueba del patrón Factory method en las clases Queue,
+ * Stack y SortedList
  */
 public class Test {
     public static void main(String args[]) {
@@ -29,9 +32,26 @@ public class Test {
             System.out.println(queue.showCollection());
             queue.delete(3);
             System.out.println(queue.showCollection());
-        } catch (QueueException ex) {
+        } catch (QueueException | StackException ex) {
             System.out.println(ex.getMessage());
-        } catch (StackException ex) {
+        }
+        
+        factory = new StackFactory();
+        NewCollection stack = factory.createCollection();
+        try {
+            stack.add(1);
+            stack.add(2);
+            stack.add(3);
+            stack.add(4);
+            stack.add(5);
+            System.out.println(stack.showCollection());
+            stack.delete();
+            System.out.println(stack.showCollection());
+            stack.delete(3);
+            System.out.println(stack.showCollection());
+            stack.delete(2);
+            System.out.println(stack.showCollection());
+        } catch (QueueException | StackException ex) {
             System.out.println(ex.getMessage());
         }
     }

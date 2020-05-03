@@ -24,7 +24,7 @@ public class Queue<V> extends NewCollection<V>{
         super(size);
     }
     
-    //Enqueue method 
+    // enqueue method 
     @Override
     public V add(V value) throws QueueException {
         Node newNode = new Node();
@@ -43,7 +43,8 @@ public class Queue<V> extends NewCollection<V>{
 
         return (V)rear.getValue();
     }
-
+    
+    // dequeue method
     @Override
     public V delete() throws QueueException{
         if (front == null) {
@@ -71,9 +72,7 @@ public class Queue<V> extends NewCollection<V>{
         } else {
             
             if (front.getValue().equals(value)) {
-                temp = (V) front.getValue();
-                front = front.getNext();
-                setTotalItems(getTotalItems() - 1);
+                delete();
             } else {
                 for (Node current = front; current.getNext() != null; current = current.getNext()) {
                     if (current.getNext().getValue().equals(value)) {
