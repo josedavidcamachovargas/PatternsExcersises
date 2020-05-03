@@ -16,6 +16,41 @@ public class Queue<V> implements IFactory<V>{
     private Node front;
     private Node rear;
     private int maxItems, totalItems;
+
+    public Queue() {
+    }
+
+    public Node getFront() {
+        return front;
+    }
+
+    public void setFront(Node front) {
+        this.front = front;
+    }
+
+    public Node getRear() {
+        return rear;
+    }
+
+    public void setRear(Node rear) {
+        this.rear = rear;
+    }
+
+    public int getMaxItems() {
+        return maxItems;
+    }
+
+    public void setMaxItems(int maxItems) {
+        this.maxItems = maxItems;
+    }
+
+    public int getTotalItems() {
+        return totalItems;
+    }
+
+    public void setTotalItems(int totalItems) {
+        this.totalItems = totalItems;
+    }
     
     //Enqueue method 
     @Override
@@ -31,8 +66,6 @@ public class Queue<V> implements IFactory<V>{
         }
         return (V) rear.getValue();
     }
-
-    //Dequeue method
 
     @Override
     public V delete() throws QueueException{
@@ -51,11 +84,11 @@ public class Queue<V> implements IFactory<V>{
     @Override
     public void show(){
         Node aux = new Node();
-        System.out.println("Lista de elementos de la pila.");
+        aux = front;
+        System.out.println("Lista de elementos de la cola");
         for(int i = 0; i <maxItems; i++){
             System.out.println(aux.getValue() + " - ");
-            aux = front.getNext();
-            
+            aux = aux.getNext(); 
         }
     }
 
