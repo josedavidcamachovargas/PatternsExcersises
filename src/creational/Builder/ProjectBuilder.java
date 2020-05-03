@@ -13,6 +13,9 @@ import java.util.Date;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ *
+ * Para simplificar la creación de objetos complejos definiendo una clase cuyo
+ * propósito es construir instancias de otra clase.
  */
 public class ProjectBuilder implements InterfaceBuilder {
     protected Project project;

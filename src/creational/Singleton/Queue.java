@@ -11,6 +11,10 @@ package creational.Singleton;
  * @author José David Camacho Vargas B91484
  * Esta clase se encarga de crear una cola basica con sus respectivos metodos
  * de encoolar, desencolar, el metodo peek y tambien isEmpty()
+ *
+ * El propósito es tener solo una instancia de esta clase en el sistema,
+ * al tiempo que permite que otras clases tengan acceso a esta única instancia.
+ * El patrón únicamente requiere de la programación de la clase Queue.
  */
 public class Queue<V> {
 

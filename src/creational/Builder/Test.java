@@ -12,5 +12,15 @@ package creational.Builder;
  * 
  */
 public class Test {
-    
+    public Project createProject(InterfaceBuilder builder,
+            Employee inCharge, int weeks, ArrayList<Date> dates) throws BuilderException {
+        if (builder == null) {
+            builder = new ProjectBuilder();
+        }
+        builder.buildProject();
+        builder.buildInCharge(inCharge);
+        builder.buildWeeks(weeks);
+        builder.buildDates(dates);
+        return builder.getProject();
+    }
 }
