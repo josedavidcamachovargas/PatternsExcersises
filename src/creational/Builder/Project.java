@@ -12,6 +12,9 @@ import java.util.Date;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase crea objetos Project, utilizando la clase Employee, que hace
+ * referencia a un proyecto de una empresa.
  */
 public class Project {
     
@@ -54,8 +57,8 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Proyecto: " + "Nombre del proyecto = " + projectName + ". Encargado = " + inCharge
-             + ". Semanas = " + weeks + ". Lista de fechas = " + dates + "";
+        return "Proyecto: " + "Nombre del proyecto = " + projectName + ".\nEncargado = " + inCharge
+             + ".\nSemanas = " + weeks + ".\nLista de fechas = " + dates + "";
     }
 
     

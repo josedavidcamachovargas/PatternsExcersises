@@ -9,6 +9,8 @@ package creational.Builder;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase crea objetos Employee, que hacen referencia a un empleado
  */
 public class Employee {
     private String name;

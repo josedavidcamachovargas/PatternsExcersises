@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
- *
+ * 
  * Para simplificar la creación de objetos complejos definiendo una clase cuyo
  * propósito es construir instancias de otra clase.
  */
@@ -55,7 +55,7 @@ public class ProjectBuilder implements InterfaceBuilder {
         if (project.getWeeks() == 0) {
             throw new BuilderException("El tiempo ingresado es menor o igual a 0");
         }
-        if (project.getDates() == null) {
+        if (project.getDates() == null || project.getDates().size() == 0) {
             throw new BuilderException("La lista de fechas es nula o está vacía");
         }
         return project;

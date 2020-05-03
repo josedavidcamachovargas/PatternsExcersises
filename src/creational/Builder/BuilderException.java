@@ -7,7 +7,11 @@ package creational.Builder;
 
 /**
  *
- * @author José David
+ * @author Andrés Antonio Gonzalez Orozco B83477
+ * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase maneja los mensajes de excepción para los posibles problemas
+ * dados en el patrón builder.
  */
 public class BuilderException extends Exception {
     

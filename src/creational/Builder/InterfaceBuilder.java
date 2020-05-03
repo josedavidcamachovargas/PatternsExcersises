@@ -12,6 +12,8 @@ import java.util.Date;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta es la interfaz con los métodos a utilizar en el patrón builder.
  */
 public interface InterfaceBuilder {
     void buildProject();
