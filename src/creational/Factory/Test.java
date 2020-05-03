@@ -17,6 +17,9 @@ import java.util.logging.Logger;
  */
 public class Test {
     public static void main(String args[]) {
+        
+        // Prueba cola
+        
         NewCollectionFactoryInterface factory = new QueueFactory();
         NewCollection queue = factory.createCollection();
         try {
@@ -32,9 +35,12 @@ public class Test {
             System.out.println(queue.showCollection());
             queue.delete(3);
             System.out.println(queue.showCollection());
-        } catch (QueueException | StackException ex) {
+        } catch (CollectionException ex) {
             System.out.println(ex.getMessage());
         }
+        
+        
+        // Prueba pila
         
         factory = new StackFactory();
         NewCollection stack = factory.createCollection();
@@ -51,8 +57,29 @@ public class Test {
             System.out.println(stack.showCollection());
             stack.delete(2);
             System.out.println(stack.showCollection());
-        } catch (QueueException | StackException ex) {
+        } catch (CollectionException ex) {
             System.out.println(ex.getMessage());
         }
+        
+        
+        // Prueba lista ordenada
+        
+        factory = new SortedListFactory();
+        NewCollection sortedList = factory.createCollection();
+        try {
+            sortedList.add(4);
+            sortedList.add(3);
+            sortedList.add(5);
+            sortedList.add(1);
+            sortedList.add(2);
+            System.out.println(sortedList.showCollection());
+            sortedList.delete(3);
+            System.out.println(sortedList.showCollection());
+            sortedList.delete(5);
+            System.out.println(sortedList.showCollection());
+        } catch (CollectionException ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 }

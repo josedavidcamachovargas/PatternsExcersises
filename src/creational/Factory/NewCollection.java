@@ -11,6 +11,9 @@ package creational.Factory;
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
  * 
+ * Clase para defenir una colección genérica estándar, adaptable luego para su
+ * uso en tipos de colecciones específicas.
+ * 
  */
 public abstract class NewCollection<V> {
     private Node first, last;
@@ -60,11 +63,13 @@ public abstract class NewCollection<V> {
         this.totalItems = totalItems;
     }
     
-    public abstract V add(V element) throws QueueException, StackException;
+    public abstract boolean add(V element) throws CollectionException;
+    
     // Este delete borra el elemento de la lista correspondiente, el frente
     // en caso de cola, el tope en caso de la pila.
-    public abstract V delete() throws QueueException, StackException;
+    public abstract V delete() throws CollectionException;
+    
     // Este delete borra el elemento especificado por el usuario.
-    public abstract V delete(V element) throws QueueException, StackException;
+    public abstract boolean delete(V element) throws CollectionException;
     public abstract String showCollection();
 }

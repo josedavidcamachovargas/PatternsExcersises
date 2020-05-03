@@ -11,7 +11,7 @@ package creational.Factory;
  * Esta clase se encarga de crear la base de un nodo generico
  * con un valor y un siguiente para el manejo de los mismos
  */
-public class Node<V> {
+public class Node<V> implements Comparable<Node> {
     private V value;
     private Node next;
 
@@ -32,5 +32,10 @@ public class Node<V> {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    @Override
+    public int compareTo(Node node) {
+        return value.toString().compareTo(node.getValue().toString());
     }
 }

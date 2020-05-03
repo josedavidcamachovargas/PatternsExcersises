@@ -26,11 +26,11 @@ public class Queue<V> extends NewCollection<V>{
     
     // enqueue method 
     @Override
-    public V add(V value) throws QueueException {
+    public boolean add(V value) throws CollectionException {
         Node newNode = new Node();
         newNode.setValue(value);
         if (getMaxItems() > 0 && getTotalItems() == getMaxItems()) {
-            throw new QueueException("La cola está llena");
+            throw new CollectionException("La cola está llena");
         } else {
             if (front == null) {
                 front = rear = newNode;
@@ -41,14 +41,14 @@ public class Queue<V> extends NewCollection<V>{
             setTotalItems(getTotalItems() + 1);
         }
 
-        return (V)rear.getValue();
+        return true;
     }
     
     // dequeue method
     @Override
-    public V delete() throws QueueException{
+    public V delete() throws CollectionException{
         if (front == null) {
-            throw new QueueException("La cola está vacía");
+            throw new CollectionException("La cola está vacía");
         }
         V dato = (V)front.getValue();
         front = front.getNext();
@@ -61,10 +61,10 @@ public class Queue<V> extends NewCollection<V>{
     }
     
     @Override
-    public V delete(V value) throws QueueException{
+    public boolean delete(V value) throws CollectionException{
         V temp = null;
         if (front == null) {
-            throw new QueueException("La cola está vacía");
+            throw new CollectionException("La cola está vacía");
         }
         if (front == rear) {
             front = rear = null;
@@ -92,8 +92,8 @@ public class Queue<V> extends NewCollection<V>{
             }
 
         }
-
-        return temp;
+        return temp != null;
+        
     }
     
     @Override

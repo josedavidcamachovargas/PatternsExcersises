@@ -27,10 +27,10 @@ public class Stack<V> extends NewCollection<V>{
 
     // pop method
     @Override
-    public V delete() throws StackException {
+    public V delete() throws CollectionException {
         V value;
         if (top == null) {
-            throw new StackException("La pila esta vacia");
+            throw new CollectionException("La pila esta vacia");
         } else {
             value = (V) top.getValue();
             top = top.getNext();
@@ -40,10 +40,10 @@ public class Stack<V> extends NewCollection<V>{
     }
 
     @Override
-    public V delete(V value) throws QueueException, StackException {
+    public boolean delete(V value) throws CollectionException {
         V temp = null;
         if (top == null) {
-            throw new StackException("La pila esta vacia");
+            throw new CollectionException("La pila esta vacia");
         } else {
             if (top.getValue().equals(value)) {
                 delete();
@@ -64,14 +64,14 @@ public class Stack<V> extends NewCollection<V>{
                 }
             }
         }
-        return temp;
+        return temp != null;
     }
 
     // push method
     @Override
-    public V add(V value) throws StackException{
+    public boolean add(V value) throws CollectionException {
         if(getMaxItems() > 0 && getTotalItems() == getMaxItems()){
-            throw new StackException("La pila esta llena");
+            throw new CollectionException ("La pila esta llena");
             
         }else {
             Node newNode = new Node();
@@ -86,7 +86,7 @@ public class Stack<V> extends NewCollection<V>{
             }
             setTotalItems(getTotalItems() + 1);
         }
-        return value;
+        return true;
     }
     
     @Override
