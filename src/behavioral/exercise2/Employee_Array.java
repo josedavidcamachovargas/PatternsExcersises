@@ -58,14 +58,27 @@ public class Employee_Array {
         }
     }
     
-    public void ascendingSurename(ArrayList<ClsEmployee> tempList){
+    public void ascendingSurename(){
+        String aux;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size() - 1; j++) {
+                if (list.get(j).getSurename().compareTo(list.get(j+1).getSurename()) == -1) {//Metodo burbuja
+                    aux = list.get(j).getSurename();
+                    list.get(j).setSurename(list.get(j+1).getSurename());
+                    list.get(j+1).setSurename(aux);  
+                }
+            }
+        }
+    }
+    
+    public void descendentSalary(){
         int aux;
-        for (int i = 0; i < tempList.size(); i++) {
-            for (int j = 0; j < tempList.size() - 1; j++) {
-                if (tempList.get(j).getId() > tempList.get(j+1).getId()) {
-                    aux = tempList.get(j).getId();
-                    tempList.get(j).setId(tempList.get(j+1).getId());
-                    tempList.get(j+1).setId(aux);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size() - 1; j++) {
+                if (list.get(j).getId() < list.get(j+1).getSalary()) {
+                    aux = list.get(j).getSalary();
+                    list.get(j).setSalary(list.get(j+1).getSalary());
+                    list.get(j+1).setSalary(aux);
                 }
             }
         }
