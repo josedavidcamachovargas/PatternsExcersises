@@ -92,7 +92,7 @@ public class Department implements DepartmentItem {
         }
     }
 
-    public void removeProjectItem(DepartmentItem department) {
+    public void removeDepartmentItem(DepartmentItem department) {
         subDepartmentList.remove(department);
     }
 
