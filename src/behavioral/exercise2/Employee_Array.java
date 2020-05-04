@@ -46,36 +46,54 @@ public class Employee_Array {
     }
     
     public void ascendingId(){
-        int aux;
+        ClsEmployee aux;
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size() - 1; j++) {
                 if (list.get(j).getId() > list.get(j+1).getId()) {
-                    aux = list.get(j).getId();
-                    list.get(j).setId(list.get(j+1).getId());
-                    list.get(j+1).setId(aux);
+                    aux = list.get(j);
+                    list.set(j, list.get(j+1));
+                    list.set(j+1, aux);
                 }
             }
         }
     }
-    
-    public void ascendingSurename(){
-        String aux;
+
+    public void ascendingSurename() {
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size() - 1; j++) {
-                if (list.get(j).getSurename().compareTo(list.get(j+1).getSurename()) == -1) {//Metodo burbuja
-                    aux = list.get(j).getSurename();
-                    list.get(j).setSurename(list.get(j+1).getSurename());
-                    list.get(j+1).setSurename(aux);  
+                if (list.get(j).getSurename().compareTo(list.get(j + 1).getSurename()) > 0) {//Metodo burbuja
+                    compareName(j);
+                } else if (list.get(j).getSurename().compareTo(list.get(j + 1).getSurename()) == 0) {
+                    if (list.get(j).getSecondSurename().compareTo(list.get(j + 1).getSecondSurename()) > 0) {
+                        compareName(j);
+                    } else if (list.get(j).getSecondSurename().compareTo(list.get(j + 1).getSecondSurename()) == 0) {
+                        if (list.get(j).getFirstName().compareTo(list.get(j + 1).getFirstName()) > 0) {
+                            compareName(j);
+                        } else if (list.get(j).getFirstName().compareTo(list.get(j + 1).getFirstName()) == 0) {
+                            if (list.get(j).getSecondName().compareTo(list.get(j + 1).getSecondName()) > 0) {
+                                compareName(j);
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+
+    private int compareName(int position){
+        ClsEmployee aux;
+        aux = list.get(position);
+        list.set(position, list.get(position+1));
+        list.set(position+1, aux);
+        return 0;
+    }
+    
     
     public void descendentSalary(){
         int aux;
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 0; j < list.size() - 1; j++) {
-                if (list.get(j).getId() < list.get(j+1).getSalary()) {
+            for (int j = 0; j > list.size() - 1; j++) {
+                if (list.get(j).getSalary() < list.get(j+1).getSalary()) {
                     aux = list.get(j).getSalary();
                     list.get(j).setSalary(list.get(j+1).getSalary());
                     list.get(j+1).setSalary(aux);

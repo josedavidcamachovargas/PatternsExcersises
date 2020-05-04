@@ -5,12 +5,10 @@
  */
 package behavioral.exercise2;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Andres Gonzalez
  */
 public interface InterfaceSort {
-    public void ascendingSurename();
+    public void sort();
 }
