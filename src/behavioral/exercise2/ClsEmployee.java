@@ -79,7 +79,9 @@ public class ClsEmployee {
 
     @Override
     public String toString() {
-        return "ClsEmployee{" + "id=" + id + ", firstName=" + firstName + ", secondName=" + secondName + ", surename=" + surename + ", secondSurename=" + secondSurename + ", salary=" + salary + '}';
+        return "Empleado: " + "\nCédula" + id + "\nPrimer nombre: " + firstName +
+                "\nSegundo nombre: " + secondName + "\nApellido: " + surename + 
+                "\nSegundo apellido: " + secondSurename + "\nSalario: " + salary + "\n";
     }
     
     
