@@ -17,7 +17,7 @@ public class Employee_Array {
     private ArrayList<ClsEmployee> list;
 
     public Employee_Array() {
-        list = new ArrayList<ClsEmployee>();
+        list = new ArrayList<>();
     }
 
     public Employee_Array(ArrayList<ClsEmployee> list) {
@@ -45,7 +45,20 @@ public class Employee_Array {
         }
     }
     
-    public void ascendingId(ArrayList<ClsEmployee> tempList){
+    public void ascendingId(){
+        int aux;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size() - 1; j++) {
+                if (list.get(j).getId() > list.get(j+1).getId()) {
+                    aux = list.get(j).getId();
+                    list.get(j).setId(list.get(j+1).getId());
+                    list.get(j+1).setId(aux);
+                }
+            }
+        }
+    }
+    
+    public void ascendingSurename(ArrayList<ClsEmployee> tempList){
         int aux;
         for (int i = 0; i < tempList.size(); i++) {
             for (int j = 0; j < tempList.size() - 1; j++) {
