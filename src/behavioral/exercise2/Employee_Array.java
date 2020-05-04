@@ -10,9 +10,12 @@ import java.util.Iterator;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta clase se encarga de crear un ArrayList de tipo ClsException, además se 
+ * implementan metodos como el de agregar, imprimir, ordenar por cedula, entre otros.
  */
-public class Employee_Array {
+public class Employee_Array implements InterfaceSort {
 
     private ArrayList<ClsEmployee> list;
 
@@ -45,6 +48,7 @@ public class Employee_Array {
         }
     }
     
+    @Override
     public void ascendingId(){
         ClsEmployee aux;
         for (int i = 0; i < list.size(); i++) {
@@ -58,6 +62,7 @@ public class Employee_Array {
         }
     }
 
+    @Override
     public void ascendingSurename() {
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size() - 1; j++) {
@@ -79,29 +84,34 @@ public class Employee_Array {
             }
         }
     }
-
-    private int compareName(int position){
+    
+     /*Este metodo se encarga de la operacion que se haria en ascendingSurename
+    en la cual se guarda un empleado llamado aux, el cual va a guardar un empleado
+    de una posicion especifica, luego al empleado el cual se compara se le hace un
+    set con un indice y con el empleado siguiente, y por ultimo se hace el mismo set
+    pero esta vez guardando la posicion que teniamos del aux*/
+    private void compareName(int position){
         ClsEmployee aux;
         aux = list.get(position);
         list.set(position, list.get(position+1));
         list.set(position+1, aux);
-        return 0;
     }
     
     
+    @Override
     public void descendentSalary(){
-        int aux;
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 0; j > list.size() - 1; j++) {
+            for (int j = 0; j < list.size() - 1; j++) {
                 if (list.get(j).getSalary() < list.get(j+1).getSalary()) {
-                    aux = list.get(j).getSalary();
-                    list.get(j).setSalary(list.get(j+1).getSalary());
-                    list.get(j+1).setSalary(aux);
+                    compareName(j);
                 }
             }
         }
     }
-
+    
+    /*Este metodo se encarga de validar si una cedula agregada no es igual a la de
+    otro trabajador, en el caso de que lo sea se lanza una excepcion en la cual 
+    indica el error*/
     private boolean idValidation(int id) throws EmployeeException {
         Iterator<ClsEmployee> i = list.iterator();
         while (i.hasNext()) {

@@ -7,8 +7,15 @@ package behavioral.exercise2;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta interfaz se encarga de crear los metodos de odenamiento los cuales 
+ * seran utilizados en la clase Employee_Array para diferentes ordenamientos 
+ * de los empleados agregados en el ArrayList
  */
 public interface InterfaceSort {
-    public void sort();
+    
+    public void ascendingId();
+    public void ascendingSurename();
+    public void descendentSalary();
 }

@@ -7,7 +7,11 @@ package behavioral.exercise2;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta clase se encarga de hacer las pruebas de los metodos
+ * ralizados en la clase Employee_Array y ClsEmployee los cuales son
+ * instanceados y probados.
  */
 public class ClsTest {
     public static void main(String args[]) throws EmployeeException {
@@ -31,8 +35,8 @@ public class ClsTest {
     array.ascendingSurename();
     System.out.println("Lista de empleados ordenada por el apellido: " + array.toString()+ "\n\n");
     
-//    array.descendentSalary();
-//    System.out.println("Lista de empleados ordenada por el salario: " + array.toString()+ "\n\n");
-//    
+    array.descendentSalary();
+    System.out.println("Lista de empleados ordenada por el salario: " + array.toString()+ "\n\n");
+    
     }
 }
