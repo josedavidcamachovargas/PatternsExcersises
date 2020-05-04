@@ -20,5 +20,5 @@ public interface EmployeeItem extends Serializable {
     public String getName();
     public void setName(String name);
     public String getId();
-    public void setId(String name);
+    public void setId(String id);
 }
