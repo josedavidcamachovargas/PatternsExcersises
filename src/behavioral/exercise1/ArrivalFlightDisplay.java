@@ -33,7 +33,7 @@ public class ArrivalFlightDisplay implements Observer, DisplayElement{
     public void display() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy - mm:ss:S");
         String dateString = formatter.format(flight.getDate().getTime());
-        System.out.println("La Aerolínea " + flight.getAirline() + "notifica la"
+        System.out.println("La Aerolínea " + flight.getAirline() + " notifica la"
                 + " llegada del vuelo número " + flight.getFlightNumber()
                 + " proveniente de " + flight.getCountry()
                 + ".\n Puerta número: " + flight.getGateNumber()
