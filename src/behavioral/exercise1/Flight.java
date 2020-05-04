@@ -12,6 +12,9 @@ import java.util.GregorianCalendar;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase crea objetos que representan un vuelo de avión con sus respectivos
+ * datos.
  */
 
 public class Flight {

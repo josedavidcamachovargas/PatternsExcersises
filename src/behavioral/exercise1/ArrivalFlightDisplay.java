@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase maneja los vuelos de tipo Llegada
  */
 public class ArrivalFlightDisplay implements Observer, DisplayElement{
     private Flight flight;

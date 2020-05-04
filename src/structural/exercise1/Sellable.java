@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package behavioral.exercise1;
+package structural.exercise1;
 
 /**
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
  * 
- * Esta clase establece los métodos base para manejar el patrón Observer
+ * Clase para proporcionar una manera felxible de agregar la
+ * funcionalidad de un componente sin cambiar el original o su función.
  */
-public interface ManageObserver {
-    public void registerObserver(Observer observer);
-    public void removeObserver(Observer observer);
-    public void notifyObservers();
+public interface Sellable {
+    public String getDescription();
+    public double getPrice();
 }

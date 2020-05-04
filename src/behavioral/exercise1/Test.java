@@ -11,6 +11,8 @@ import java.util.GregorianCalendar;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase realiza las distintas pruebas del patrón Observer.
  */
 public class Test {
     public static void main(String[] args) {

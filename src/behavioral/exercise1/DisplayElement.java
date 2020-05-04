@@ -9,6 +9,8 @@ package behavioral.exercise1;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta interfaz crea un método display() base
  */
 public interface DisplayElement {
     public void display();

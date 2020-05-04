@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase maneja tanto vuelos de llegada como de salida
  */
 public class BothTypesDisplay implements Observer, DisplayElement {
     private Flight flight;
@@ -18,6 +20,7 @@ public class BothTypesDisplay implements Observer, DisplayElement {
 
     public BothTypesDisplay(Airport airport) {
         this.airport = airport;
+        airport.registerObserver(this);
     }
 
     @Override

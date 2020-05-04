@@ -11,6 +11,12 @@ import java.util.ArrayList;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase crea un objeto aeropuerto que maneja una lista de vuelos y la
+ * va actualizando.
+ * 
+ * Proporciona una forma para que un componente transmita mensajes de manera
+ * flexible a los receptores interesados.
  */
 public class Airport implements ManageObserver{
     private ArrayList<Observer> flightList;

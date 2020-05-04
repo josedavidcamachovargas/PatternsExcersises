@@ -9,6 +9,8 @@ package behavioral.exercise1;
  *
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
+ * 
+ * Esta clase maneja el método base para actualizar el patrón Observer
  */
 public interface Observer {
     public void update(Flight flight);
