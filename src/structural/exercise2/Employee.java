@@ -19,6 +19,12 @@ public class Employee implements EmployeeItem {
     public Employee() {
     }
 
+    public Employee(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
+    
+
     @Override
     public String getName() {
         return name;
