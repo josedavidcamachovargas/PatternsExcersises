@@ -6,8 +6,10 @@
 package behavioral.exercise2;
 
 /**
- *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta clase se encarga de crear un empleado con sus
+ * diferentes metodos set, get y toStrin
  */
 public class ClsEmployee {
     private int id;

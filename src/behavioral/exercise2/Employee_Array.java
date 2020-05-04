@@ -80,23 +80,19 @@ public class Employee_Array {
         }
     }
 
-    private int compareName(int position){
+    private void compareName(int position){
         ClsEmployee aux;
         aux = list.get(position);
         list.set(position, list.get(position+1));
         list.set(position+1, aux);
-        return 0;
     }
     
     
     public void descendentSalary(){
-        int aux;
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 0; j > list.size() - 1; j++) {
+            for (int j = 0; j < list.size() - 1; j++) {
                 if (list.get(j).getSalary() < list.get(j+1).getSalary()) {
-                    aux = list.get(j).getSalary();
-                    list.get(j).setSalary(list.get(j+1).getSalary());
-                    list.get(j+1).setSalary(aux);
+                    compareName(j);
                 }
             }
         }
