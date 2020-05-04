@@ -15,7 +15,7 @@ import java.util.Iterator;
  * Esta clase se encarga de crear un ArrayList de tipo ClsException, además se 
  * implementan metodos como el de agregar, imprimir, ordenar por cedula, entre otros.
  */
-public class Employee_Array {
+public class Employee_Array implements InterfaceSort {
 
     private ArrayList<ClsEmployee> list;
 
@@ -48,6 +48,7 @@ public class Employee_Array {
         }
     }
     
+    @Override
     public void ascendingId(){
         ClsEmployee aux;
         for (int i = 0; i < list.size(); i++) {
@@ -61,6 +62,7 @@ public class Employee_Array {
         }
     }
 
+    @Override
     public void ascendingSurename() {
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size() - 1; j++) {
@@ -96,6 +98,7 @@ public class Employee_Array {
     }
     
     
+    @Override
     public void descendentSalary(){
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size() - 1; j++) {
