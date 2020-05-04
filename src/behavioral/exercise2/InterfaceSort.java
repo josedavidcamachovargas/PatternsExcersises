@@ -5,6 +5,8 @@
  */
 package behavioral.exercise2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andrés Antonio González Orozco B83477  
@@ -12,10 +14,11 @@ package behavioral.exercise2;
  * Esta interfaz se encarga de crear los metodos de odenamiento los cuales 
  * seran utilizados en la clase Employee_Array para diferentes ordenamientos 
  * de los empleados agregados en el ArrayList
+ * 
+ * Usado para definir un grupo de clases que representan un conjunto de
+ * posibles comportamientos.
  */
 public interface InterfaceSort {
     
-    public void ascendingId();
-    public void ascendingSurename();
-    public void descendentSalary();
+    public void sort(ArrayList<Employee> list);
 }

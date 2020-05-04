@@ -11,7 +11,7 @@ package behavioral.exercise2;
  * Esta clase se encarga de crear un empleado con sus
  * diferentes metodos set, get y toStrin
  */
-public class ClsEmployee {
+public class Employee {
     private int id;
     private String firstName;
     private String secondName;
@@ -19,7 +19,7 @@ public class ClsEmployee {
     private String secondSurename;
     private int salary;
 
-    public ClsEmployee(int id, String firstName, String secondName, String surename, String secondSurename, int salary) {
+    public Employee(int id, String firstName, String secondName, String surename, String secondSurename, int salary) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -28,7 +28,7 @@ public class ClsEmployee {
         this.salary = salary;
     }
 
-    public ClsEmployee() {
+    public Employee() {
     }
 
     public int getId() {
