@@ -10,7 +10,7 @@ package structural.exercise2;
  * @author Andrés Antonio Gonzalez Orozco B83477
  * @author José David Camacho Vargas B91484
  * 
- * Esta clase se encarga de la prueba para los métodos del patrón Composite
+ * Esta clase se encarga de la prueba para los métodos del 
  */
 public class Test {
     public static void main(String[] args) {
