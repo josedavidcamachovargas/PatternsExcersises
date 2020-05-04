@@ -7,7 +7,10 @@ package behavioral.exercise2;
 
 /**
  *
- * @author Andres Gonzalez
+ * @author Andrés Antonio González Orozco B83477  
+ * @author José David Camacho Vargas B91484
+ * Esta clase se encarga de crear una excepcion de tipo collection la 
+ * cual va a ser utilizada en las clases 
  */
 public class EmployeeException extends Exception{
 

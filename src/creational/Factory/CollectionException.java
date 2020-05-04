@@ -10,7 +10,7 @@ package creational.Factory;
  * @author Andrés Antonio González Orozco B83477  
  * @author José David Camacho Vargas B91484
  * Esta clase se encarga de crear una excepcion de tipo collection la 
- * cual va a ser utilizada en las clases 
+ * cual va a ser utilizada en las demas clases 
  */
 public class CollectionException extends Exception {
     public CollectionException(String message) {
