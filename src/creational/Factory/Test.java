@@ -5,8 +5,7 @@
  */
 package creational.Factory;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * @author Andrés Antonio González Orozco B83477  
